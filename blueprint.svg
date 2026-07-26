@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460">
+<rect width="760" height="460" fill="#13201b"/>
+<g stroke="#c7a56a" stroke-width="1.5" fill="none" opacity=".88">
+<rect x="65" y="62" width="630" height="330"/><path d="M65 170h630M65 300h630M210 62v330M390 62v330M548 62v330"/>
+<path d="M210 118h180M292 62v108M548 244h147M620 170v130M65 236h145M130 170v130"/>
+<path d="M110 104h60v42h-60zM242 92h106v56H242zM430 88h82v72h-82zM585 92h72v52h-72z"/>
+<path d="M94 332h90v42H94zM246 324h114v50H246zM430 326h86v48h-86zM582 330h74v44h-74z"/>
+<circle cx="470" cy="228" r="38"/><path d="M447 228h46M470 205v46"/>
+</g>
+<g fill="#f5f0e7" font-family="Arial,sans-serif" font-size="11" letter-spacing="1">
+<text x="72" y="48">CONCEPTUAL FLOOR PLAN • DESIGN INTENT ONLY</text><text x="610" y="414">SHEET A-101</text>
+</g>
+</svg>

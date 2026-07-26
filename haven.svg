@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" role="img" aria-labelledby="title desc">
+<title id="title">Aurelia Haven AH-1510</title><desc id="desc">Stylized luxury architectural rendering for Aurelia Haven AH-1510</desc>
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#838c82"/><stop offset="1" stop-color="#111411"/></linearGradient>
+<linearGradient id="ground" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#4b5549"/><stop offset=".5" stop-color="#283129"/><stop offset="1" stop-color="#4b5549"/></linearGradient>
+</defs>
+<rect width="760" height="460" fill="url(#sky)"/>
+<circle cx="650" cy="72" r="38" fill="#f5dfad" opacity=".45"/>
+<g>
+        <rect x="56" y="132" width="648" height="180" fill="#161b18"/>
+        <path d="M34 134L380 55l346 79" fill="none" stroke="#b8894f" stroke-width="10"/>
+        <rect x="100" y="170" width="95" height="142" fill="#303632"/>
+        <rect x="214" y="170" width="95" height="142" fill="#303632"/>
+        <rect x="451" y="170" width="95" height="142" fill="#303632"/>
+        <rect x="565" y="170" width="95" height="142" fill="#303632"/>
+        <rect x="333" y="188" width="94" height="124" fill="#b8894f" opacity=".75"/>
+        <path d="M0 312h760v80H0z" fill="#4b5549"/>
+        <circle cx="84" cy="294" r="40" fill="#66735f"/>
+        <circle cx="688" cy="294" r="46" fill="#66735f"/>
+        </g>
+<path d="M0 385h760v75H0z" fill="url(#ground)"/>
+<text x="34" y="422" fill="#f5f0e7" font-family="Georgia,serif" font-size="24" letter-spacing="1">Aurelia Haven AH-1510</text>
+<text x="36" y="445" fill="#b8894f" font-family="Arial,sans-serif" font-size="10" letter-spacing="3">LUXURY DOG KENNEL SUITE</text>
+</svg>

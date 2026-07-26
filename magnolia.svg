@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" role="img" aria-labelledby="title desc">
+<title id="title">Magnolia Estate Manor</title><desc id="desc">Stylized luxury architectural rendering for Magnolia Estate Manor</desc>
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b7ada0"/><stop offset="1" stop-color="#1d1c1a"/></linearGradient>
+<linearGradient id="ground" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#5e6557"/><stop offset=".5" stop-color="#283129"/><stop offset="1" stop-color="#5e6557"/></linearGradient>
+</defs>
+<rect width="760" height="460" fill="url(#sky)"/>
+<circle cx="650" cy="72" r="38" fill="#f5dfad" opacity=".45"/>
+<g>
+        <rect x="68" y="145" width="624" height="160" fill="#f0eadf"/>
+        <path d="M46 148L175 70h415l130 78" fill="none" stroke="#c7a56a" stroke-width="10"/>
+        <rect x="112" y="182" width="116" height="123" fill="#49443f"/>
+        <rect x="254" y="182" width="116" height="123" fill="#49443f"/>
+        <rect x="396" y="182" width="116" height="123" fill="#49443f"/>
+        <rect x="538" y="182" width="116" height="123" fill="#49443f"/>
+        <rect x="327" y="207" width="108" height="98" fill="#c7a56a" opacity=".55"/>
+        <path d="M0 305h760v80H0z" fill="#5e6557"/>
+        <path d="M208 385l88-80h168l88 80" fill="#b8c9c5" opacity=".8"/>
+        </g>
+<path d="M0 385h760v75H0z" fill="url(#ground)"/>
+<text x="34" y="422" fill="#f5f0e7" font-family="Georgia,serif" font-size="24" letter-spacing="1">Magnolia Estate Manor</text>
+<text x="36" y="445" fill="#c7a56a" font-family="Arial,sans-serif" font-size="10" letter-spacing="3">ELEGANT MODERN MANOR</text>
+</svg>

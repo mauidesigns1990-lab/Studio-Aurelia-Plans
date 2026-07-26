@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 90" role="img" aria-labelledby="title">
+<title>Studio Aurelia Plans</title>
+<rect width="320" height="90" fill="none"/>
+<g fill="none" stroke="#c7a56a" stroke-width="2">
+  <path d="M15 62L45 20l30 42"/>
+  <path d="M29 62V45h32v17"/>
+  <path d="M90 19v49"/>
+</g>
+<text x="104" y="40" fill="#f5f0e7" font-family="Georgia,serif" font-size="25" letter-spacing="3">STUDIO AURELIA</text>
+<text x="106" y="64" fill="#c7a56a" font-family="Arial,sans-serif" font-size="10" letter-spacing="5">PLANS</text>
+</svg>

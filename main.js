@@ -1,0 +1,14 @@
+
+const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+const menu=$('.menu-toggle'), links=$('.nav-links');
+if(menu){menu.addEventListener('click',()=>{links.classList.toggle('open');document.body.classList.toggle('menu-open');menu.setAttribute('aria-expanded',links.classList.contains('open'));});$$('.nav-links a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');document.body.classList.remove('menu-open')}));}
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});$$('.reveal').forEach(el=>observer.observe(el));
+$$('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{$$('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;$$('.plan-card').forEach(card=>card.hidden=!(f==='all'||card.dataset.category===f));}));
+const hours=$('#hours'),hoursValue=$('#hours-value'),serviceBtns=$$('.choice-btn[data-rate]'),total=$('#service-total'),serviceName=$('#service-name'),hourlyRate=$('#hourly-rate');
+let rate=85,name='Interior Design';function updateCalc(){if(!hours)return;const h=Number(hours.value);hoursValue.textContent=`${h} hours`;total.textContent=`$${(h*rate).toLocaleString()}`;serviceName.textContent=name;hourlyRate.textContent=`$${rate}/hr`;}
+if(hours){hours.addEventListener('input',updateCalc);serviceBtns.forEach(b=>b.addEventListener('click',()=>{serviceBtns.forEach(x=>x.classList.remove('active'));b.classList.add('active');rate=Number(b.dataset.rate);name=b.dataset.name;updateCalc()}));updateCalc();}
+const compare=$('.compare input');if(compare){compare.addEventListener('input',e=>{const p=e.target.value;$('.compare .after').style.clipPath=`inset(0 0 0 ${p}%)`;$('.compare-line').style.left=`${p}%`;});}
+$$('.faq-button').forEach(btn=>btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');item.classList.toggle('open');btn.setAttribute('aria-expanded',item.classList.contains('open'));}));
+const tiers={3:{price:1750,builds:'Up to 12 homes',plans:'3 signature designs',per:'$583'},6:{price:3200,builds:'Up to 30 homes',plans:'6 signature designs',per:'$533'},10:{price:4900,builds:'Up to 60 homes',plans:'10 signature designs',per:'$490'}};
+$$('.tier-tab').forEach(tab=>tab.addEventListener('click',()=>{$$('.tier-tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');const d=tiers[tab.dataset.tier];$('#tier-price').textContent=`$${d.price.toLocaleString()}`;$('#tier-plans').textContent=d.plans;$('#tier-builds').textContent=d.builds;$('#tier-per').textContent=d.per;}));
+$$('form[data-netlify]').forEach(form=>form.addEventListener('submit',()=>{const btn=$('button[type=submit]',form);if(btn){btn.textContent='Sending…';btn.disabled=true;}}));
