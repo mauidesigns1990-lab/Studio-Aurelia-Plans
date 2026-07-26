@@ -1,0 +1,20 @@
+const plans=[
+ {name:'Majestic Solara Courtyard Estate',cat:['estate','courtyard'],style:'U-Shaped Sanctuary',beds:'Luxury Estate',a:'#39204f',b:'#111116'},
+ {name:'Laurel Point Estate',cat:['estate','modern'],style:'Indoor–Outdoor Living',beds:'Signature Plan',a:'#6f8293',b:'#252b31'},
+ {name:'Rose Noir Courtyard Estate',cat:['estate','courtyard'],style:'Dramatic Courtyard',beds:'Luxury Estate',a:'#4a2433',b:'#0d0d0f'},
+ {name:'Magnolia Estate Manor',cat:['estate'],style:'Grand Manor',beds:'7-Bedroom Concept',a:'#756452',b:'#171513'},
+ {name:'Aurelia Crescent Estate',cat:['modern','estate'],style:'Contemporary Estate',beds:'Signature Plan',a:'#a89276',b:'#29221d'},
+ {name:'Aurelia Haven Kennel',cat:['specialty','modern'],style:'Luxury Pet Architecture',beds:'Specialty Plan',a:'#9c7448',b:'#111214'}
+];
+const grid=document.querySelector('#plan-grid');
+function renderPlans(filter='all'){grid.innerHTML=plans.filter(p=>filter==='all'||p.cat.includes(filter)).map((p,i)=>`<article class="plan-card"><div class="plan-image" style="--cardA:${p.a};--cardB:${p.b}"><span class="plan-number">0${i+1}</span><span class="plan-tag">${p.style}</span></div><div class="plan-content"><h3>${p.name}</h3><p>Professionally presented conceptual design package with floor-plan vision, exterior direction, and premium visual storytelling.</p><div class="plan-meta"><span>${p.beds}</span><span>Single-use options</span></div></div></article>`).join('')}
+renderPlans();
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderPlans(b.dataset.filter)}));
+const packages={3:{name:'3-Plan Developer Collection',features:['Choose three eligible signature plans','Developer use license','Coordinated marketing render set','Digital plan delivery']},5:{name:'5-Plan Developer Collection',features:['Choose five eligible signature plans','Expanded developer use license','Coordinated portfolio presentation','Priority collection onboarding']},10:{name:'10-Plan Developer Portfolio',features:['Choose ten eligible signature plans','Portfolio-scale developer license','Premium visual marketing library','Collection strategy consultation']}};
+document.querySelectorAll('.package-tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.package-tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');const p=packages[b.dataset.package];document.querySelector('#package-name').textContent=p.name;document.querySelector('#package-features').innerHTML=p.features.map(x=>`<li>${x}</li>`).join('')}));
+const services={interior:{name:'Interior Design',rate:85},organizing:{name:'Professional Organizing',rate:35},housekeeping:{name:'Housekeeping',rate:23}};
+let current='interior';const hours=document.querySelector('#hours');
+function updateRates(){const s=services[current],h=+hours.value;document.querySelector('#calculator-service').textContent=s.name;document.querySelector('#hours-value').textContent=h;document.querySelector('#total-price').textContent=`$${s.rate*h}`;document.querySelector('#rate-table').innerHTML=Array.from({length:9},(_,i)=>i+2).map(n=>`<div class="rate-cell ${n===h?'active':''}"><span>${n} hours</span><strong>$${n*s.rate}</strong></div>`).join('')}
+hours.addEventListener('input',updateRates);document.querySelectorAll('.service-card').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.service-card').forEach(x=>x.classList.remove('active'));b.classList.add('active');current=b.dataset.service;updateRates()}));updateRates();
+const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('#site-nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
